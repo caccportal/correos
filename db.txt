@@ -1,0 +1,50 @@
+usuario : correos
+host: localhost
+password:correo_0110
+
+
+def connect_db():
+    return mysql.connector.connect(
+        host="localhost",
+        user="correos",
+        password="correo_0110",
+        database="correos"
+    
+directory = "C:/correos"
+
+
+CREATE TABLE emails (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    sender VARCHAR(255),
+    recipient VARCHAR(255),
+    cc VARCHAR(255),
+    subject VARCHAR(255),
+    body TEXT,
+    date DATETIME,
+    category_color VARCHAR(50),
+    attachments LONGBLOB,
+    UNIQUE KEY unique_email (sender, subject, date)
+);
+
+
+ALTER USER 'correos'@'localhost' IDENTIFIED BY 'correo_0110';
+GRANT Alter routine ON correos.* TO 'correos'@'localhost';
+GRANT Create routine ON correos.* TO 'correos'@'localhost';
+GRANT Create temporary tables ON correos.* TO 'correos'@'localhost';
+GRANT Execute ON correos.* TO 'correos'@'localhost';
+GRANT Lock tables ON correos.* TO 'correos'@'localhost';
+GRANT Grant option ON correos.* TO 'correos'@'localhost';
+GRANT Alter ON correos.* TO 'correos'@'localhost';
+GRANT Create ON correos.* TO 'correos'@'localhost';
+GRANT Create view ON correos.* TO 'correos'@'localhost';
+GRANT Delete ON correos.* TO 'correos'@'localhost';
+GRANT Delete history ON correos.* TO 'correos'@'localhost';
+GRANT Drop ON correos.* TO 'correos'@'localhost';
+GRANT Grant option ON correos.* TO 'correos'@'localhost';
+GRANT Index ON correos.* TO 'correos'@'localhost';
+GRANT Insert ON correos.* TO 'correos'@'localhost';
+GRANT References ON correos.* TO 'correos'@'localhost';
+GRANT Select ON correos.* TO 'correos'@'localhost';
+GRANT Show view ON correos.* TO 'correos'@'localhost';
+GRANT Trigger ON correos.* TO 'correos'@'localhost';
+GRANT Update ON correos.* TO 'correos'@'localhost';
